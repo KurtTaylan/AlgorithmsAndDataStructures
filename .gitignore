@@ -1,13 +1,11 @@
 #IDE files#
-.iml
-idea/
+*.iml
+.idea/
 out/
-AlgorihtmsAndDataStructure.iml
 
 # Compiled source #
 ###################
 *.com
-*.class
 *.dll
 *.exe
 *.o
@@ -41,5 +39,3 @@ AlgorihtmsAndDataStructure.iml
 .Trashes
 ehthumbs.db
 Thumbs.db
-
-
