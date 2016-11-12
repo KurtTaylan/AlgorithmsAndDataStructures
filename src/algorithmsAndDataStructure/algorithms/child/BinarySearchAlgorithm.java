@@ -5,8 +5,6 @@ import algorithmsAndDataStructure.algorithms.parent.SortAlgorithm;
 import algorithmsAndDataStructure.domain.Airport;
 
 import java.time.LocalTime;
-import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
 
 /**
@@ -26,13 +24,13 @@ import java.util.List;
  */
 public class BinarySearchAlgorithm extends SearchAlgorithm {
 
-    private SortAlgorithm selectionSort = new SelectionSortAlgorithm();
+    private SortAlgorithm sortAlgorithm = new MysterySortAlgorithm(); // SelectionSortAlgorithm();
 
 
     // Data:7000 ,  Algorithm process could not measure by nanoseconds.Constant.
     @Override
     public void toFindInArray(String searchingCityInput, Airport[] exampleArray) {
-        selectionSort.toSortArray(exampleArray);  // selection sort algorithm
+        sortAlgorithm.toSortArray(exampleArray);  // selection sort algorithm
 
         System.out.println("Start BINARY SEARCH in CLASSIC ARRAY");
 
@@ -67,7 +65,7 @@ public class BinarySearchAlgorithm extends SearchAlgorithm {
     // Data:7000 ,  Algorithm process could not measure by nanoseconds.Constant.
     @Override
     public void toFindInList(String searchingCityInput, List<Airport> airportsList) {
-        selectionSort.toSortList(airportsList);// selection sort algorithm
+        sortAlgorithm.toSortList(airportsList);// selection sort algorithm
 
         System.out.println("Starting BINARY SEARCH in LIST");
 
@@ -92,12 +90,5 @@ public class BinarySearchAlgorithm extends SearchAlgorithm {
         }
 
         System.out.println("Finished BINARY SEARCH in LIST");
-    }
-
-    private void sortList(List<Airport> airportList) {
-        Comparator<Airport> byCityName = (firstElement, secondElement) ->
-                firstElement.getCity().compareTo(secondElement.getCity());
-
-        Collections.sort(airportList, byCityName);
     }
 }

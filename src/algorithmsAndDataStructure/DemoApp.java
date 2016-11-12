@@ -16,6 +16,8 @@ public class DemoApp {
         linearSearch.doAlgorihtm();
 
         System.out.println();
+        System.out.println();
+        System.out.println();
 
         // Print out algorithm under binary search process
         SearchAlgorithm binarySearch = new BinarySearchAlgorithm();

@@ -17,7 +17,7 @@ import java.util.List;
 class SelectionSortAlgorithm extends SortAlgorithm {
 
 
-    // Data: 7000 , Algoritm Process took: 305000000 nanoseconds.
+    // Data: 6050 , Algoritm Process took: 305000000 nanoseconds.
     @Override
     public void toSortArray(Airport[] airportList) {
         System.out.println("START SELECTIONSORT ALGORITHM in CLASSIC ARRAY");
@@ -39,7 +39,8 @@ class SelectionSortAlgorithm extends SortAlgorithm {
         System.out.println("FINISH SELECTIONSORT ALGORITHM in CLASSIC ARRAY");
     }
 
-    // Data: 7000 , Algoritm Process took: 323000000 nanoseconds.
+
+    // Data: 6050 , Algoritm Process took: 323000000 nanoseconds.
     @Override
     public void toSortList(List<Airport> airportList) {
         System.out.println("START SELECTIONSORT ALGORITHM IN LIST");
@@ -60,12 +61,5 @@ class SelectionSortAlgorithm extends SortAlgorithm {
         algorithmTimer.printOutTime();
 
         System.out.println("FINISH SELECTIONSORT ALGORITHM IN LIST");
-    }
-
-    private void swap(List<Airport> airportList, int indexMin, int i) {
-        Airport tempMin = airportList.get(indexMin);
-        Airport tempSwap = airportList.get(i);
-        airportList.set(indexMin, tempSwap);
-        airportList.set(i, tempMin);
     }
 }
