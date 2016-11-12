@@ -1,11 +1,11 @@
 package algorithmsAndDataStructure;
 
-import algorithmsAndDataStructure.algorithms.BinarySearchAlgorithm;
-import algorithmsAndDataStructure.algorithms.LinearSearchAlgorithm;
+import algorithmsAndDataStructure.algorithms.child.BinarySearchAlgorithm;
+import algorithmsAndDataStructure.algorithms.child.LinearSearchAlgorithm;
 import algorithmsAndDataStructure.algorithms.parent.SearchAlgorithm;
 
 /**
- * Created by taylan on 12.11.2016.
+ * Highest level of application =  Client-side
  */
 public class DemoApp {
 
@@ -14,6 +14,8 @@ public class DemoApp {
         // Print out algorithm under linear search process
         SearchAlgorithm linearSearch = new LinearSearchAlgorithm();
         linearSearch.doAlgorihtm();
+
+        System.out.println();
 
         // Print out algorithm under binary search process
         SearchAlgorithm binarySearch = new BinarySearchAlgorithm();

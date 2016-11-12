@@ -2,22 +2,30 @@ package algorithmsAndDataStructure.algorithms.parent;
 
 import algorithmsAndDataStructure.domain.Airport;
 
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by taylan on 12.11.2016.
+ * Searching Algorithms family members will inherite from this.
  */
-public abstract class SearchAlgorithm {
+public abstract class SearchAlgorithm extends Algorithm {
 
+    private static void copySamplePortionFromTo(List<Airport> airportsList, Airport[] exampleArray) {
+        airportsList
+                .forEach((Airport airport) -> exampleArray[airportsList.indexOf(airport)] = airport);
+    }
 
     public abstract void toFindInArray(String searchingCityInput, Airport[] exampleArray);
 
     public abstract void toFindInList(String searchingCityInput, List<Airport> airportsList);
 
     public void doAlgorihtm() {
+        System.out.println("Started with preparation");
 
         File airPortFile = new File("/home/taylan/Desktop/AlgorithmsAndDataStructure/src/algorithmsAndDataStructure/resource/airlines.dat.txt");
         Path airPortPath = airPortFile.toPath();
@@ -26,10 +34,10 @@ public abstract class SearchAlgorithm {
         fillInAirportList(airPortPath, airportsList);
         Airport[] exampleArray = new Airport[airportsList.size()];
 
-        if (airportsList.isEmpty()) {
-            // Do nothing
-        } else {
+        if (!airportsList.isEmpty()) {
+
             copySamplePortionFromTo(airportsList, exampleArray);
+            System.out.println("Done with preparation");
 
             //Search for index in LinearSe
             String searchingCityInput = "\"FlyPortugal\"";
@@ -38,15 +46,14 @@ public abstract class SearchAlgorithm {
         }
     }
 
-
-    public void fillInAirportList(Path airPortPath, List<Airport> airportsList) {
+    private void fillInAirportList(Path airPortPath, List<Airport> airportsList) {
 
         try {
 
             BufferedReader reader = new BufferedReader(new FileReader(airPortPath.toFile()));
 
             String line;
-            while ((line= reader.readLine())!= null ){
+            while ((line = reader.readLine()) != null) {
 
             /*
              *  5.- threeLetterCode
@@ -55,21 +62,12 @@ public abstract class SearchAlgorithm {
              * */
 
                 String lineList[] = line.split(",");
-                Airport airportRecord = new Airport(lineList[4],lineList[5],lineList[6]);
+                Airport airportRecord = new Airport(lineList[4], lineList[5], lineList[6]);
                 airportsList.add(airportRecord);
             } // File ready
 
-        } catch (FileNotFoundException e) {
-            System.out.println(e);
         } catch (IOException e) {
-            System.out.println(e);
+            System.err.println(e);
         }
-    }
-
-
-    public static void copySamplePortionFromTo(List<Airport> airportsList, Airport[] exampleArray) {
-
-        airportsList
-                .forEach((Airport airport) ->  exampleArray[airportsList.indexOf(airport)] = airport);
     }
 }
