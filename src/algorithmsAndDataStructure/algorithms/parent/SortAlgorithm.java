@@ -18,7 +18,9 @@ public abstract class SortAlgorithm extends Algorithm {
 
     public abstract void toSortArray(Airport[] array);
 
+
     public abstract void toSortList(List<Airport> list);
+
 
     protected void swap(List<Airport> airportList, int indexMin, int i) {
         Airport tempMin = airportList.get(indexMin);

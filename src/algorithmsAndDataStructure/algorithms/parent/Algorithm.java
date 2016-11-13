@@ -8,5 +8,4 @@ import algorithmsAndDataStructure.domain.Timer;
 abstract class Algorithm {
 
     protected static Timer algorithmTimer = new Timer();
-
 }

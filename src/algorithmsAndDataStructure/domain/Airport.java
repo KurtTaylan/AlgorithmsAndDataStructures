@@ -1,16 +1,17 @@
 package algorithmsAndDataStructure.domain;
 
-/**
- * Created by taylan on 12.11.2016.
- */
+
 public class Airport {
+
 
     private  String city;
     private  String coutry;
     private  String threeLetterCode;
 
+
     public Airport() {
     }
+
 
     public Airport(String threeLetterCode,String city, String coutry) {
         this.city = city;

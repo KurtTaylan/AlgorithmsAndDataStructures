@@ -9,8 +9,10 @@ import java.time.LocalTime;
  */
 public class Timer {
 
+
     private LocalTime startInstant;
     private LocalTime finishInstant;
+
 
     public void printOutTime() {
         long processTime = this.finishInstant.toNanoOfDay() - this.startInstant.toNanoOfDay();

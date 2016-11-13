@@ -15,14 +15,18 @@ import java.util.List;
  */
 public abstract class SearchAlgorithm extends Algorithm {
 
+
     private static void copySamplePortionFromTo(List<Airport> airportsList, Airport[] exampleArray) {
         airportsList
                 .forEach((Airport airport) -> exampleArray[airportsList.indexOf(airport)] = airport);
     }
 
+
     public abstract void toFindInArray(String searchingCityInput, Airport[] exampleArray);
 
+
     public abstract void toFindInList(String searchingCityInput, List<Airport> airportsList);
+
 
     public void doAlgorihtm() {
         System.out.println("Started with preparation");
