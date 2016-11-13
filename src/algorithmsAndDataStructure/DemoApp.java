@@ -19,7 +19,7 @@ public class DemoApp {
         System.out.println();
         System.out.println();
 
-        // Print out algorithm under binary search process
+        // Print out algorithm under binary search process with different kind of sort algorithms
         SearchAlgorithm binarySearch = new BinarySearchAlgorithm();
         binarySearch.doAlgorihtm();
 

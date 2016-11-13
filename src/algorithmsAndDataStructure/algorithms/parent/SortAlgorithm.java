@@ -6,6 +6,12 @@ import java.util.List;
 
 /**
  * Sorting Algorithms family members will inherite from this.
+ *
+ * Fast order:
+ *
+ * 1-Merge Sort Algorithm - Built-in with java.util.Collections
+ * 2-Insertion Algorithm
+ * 3-Selection Algorithm
  */
 public abstract class SortAlgorithm extends Algorithm {
 

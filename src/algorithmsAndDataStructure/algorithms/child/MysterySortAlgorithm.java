@@ -16,6 +16,10 @@ import java.util.List;
  * 2-If its not;
  * 2.1-Swap them
  * 2.2- if it is, continue for next position.
+ *
+ * Advantage: To sort 'relatively' gives fewer step to complete process.
+ *
+ * New NickName: Insertion Sort Algorithms
  */
 class MysterySortAlgorithm extends SortAlgorithm {
 

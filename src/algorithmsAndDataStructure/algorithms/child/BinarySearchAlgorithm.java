@@ -5,6 +5,7 @@ import algorithmsAndDataStructure.algorithms.parent.SortAlgorithm;
 import algorithmsAndDataStructure.domain.Airport;
 
 import java.time.LocalTime;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -24,40 +25,18 @@ import java.util.List;
  */
 public class BinarySearchAlgorithm extends SearchAlgorithm {
 
-    private SortAlgorithm sortAlgorithm = new MysterySortAlgorithm(); // SelectionSortAlgorithm();
+
+    private SortAlgorithm sortAlgorithm = new MergeSortAlgorithm();// 2- MysterySortAlgorithm(); // 3-SelectionSortAlgorithm();
 
 
     // Data:7000 ,  Algorithm process could not measure by nanoseconds.Constant.
     @Override
     public void toFindInArray(String searchingCityInput, Airport[] exampleArray) {
+
         sortAlgorithm.toSortArray(exampleArray);  // selection sort algorithm
 
         System.out.println("Start BINARY SEARCH in CLASSIC ARRAY");
-
-        algorithmTimer.setStartInstant(LocalTime.now());
-        for (int minIndex = 0, maxIndex = exampleArray.length - 1; minIndex <= maxIndex; ) {
-
-            int middleIndex = (maxIndex + minIndex) / 2;
-            Airport candidateAirport = exampleArray[middleIndex];
-            int compareNumber = candidateAirport.getCity().compareTo(searchingCityInput);
-
-            if (compareNumber == 0) {
-
-                algorithmTimer.setFinishInstant(LocalTime.now());
-                algorithmTimer.printOutTime();
-                break;
-
-            } else if (compareNumber > 0) {
-
-                maxIndex = middleIndex - 1;
-
-            } else {
-
-                minIndex = middleIndex + 1;
-
-            }
-        }
-
+        binarySearch(searchingCityInput, Arrays.asList(exampleArray));
         System.out.println("Finish BINARY SEARCH in CLASSIC ARRAY");
     }
 
@@ -65,10 +44,15 @@ public class BinarySearchAlgorithm extends SearchAlgorithm {
     // Data:7000 ,  Algorithm process could not measure by nanoseconds.Constant.
     @Override
     public void toFindInList(String searchingCityInput, List<Airport> airportsList) {
+
         sortAlgorithm.toSortList(airportsList);// selection sort algorithm
 
         System.out.println("Starting BINARY SEARCH in LIST");
+        binarySearch(searchingCityInput, airportsList);
+        System.out.println("Finished BINARY SEARCH in LIST");
+    }
 
+    private void binarySearch(String searchingCityInput, List<Airport> airportsList) {
         algorithmTimer.setStartInstant(LocalTime.now());
         for (int minIndex = 0, maxIndex = airportsList.size() - 1; minIndex <= maxIndex; ) {
 
