@@ -25,32 +25,49 @@ import java.util.List;
  */
 public class BinarySearchAlgorithm extends SearchAlgorithm {
 
-
     // 2-
-    private SortAlgorithm sortAlgorithm = new QuickSortAlgorithm();//1-MergeSortAlgorithm();// 3- MysterySortAlgorithm(); // 4-SelectionSortAlgorithm();
+    private SortAlgorithm sortAlgorithm = new MergeSortAlgorithm();//1-MergeSortAlgorithm();// 3- MysterySortAlgorithm(); // 4-SelectionSortAlgorithm();
 
 
-    // BenchMarking: Data:7000 ,  Algorithm process could not measure by nanoseconds.Constant.
+    // BenchMarking: Data:6050 ,  Algoritm Process took: 0.001 second(s).
     @Override
-    public void toFindInArray(String searchingCityInput, Airport[] exampleArray) {
+    public void toFindInLinkedList(String searchingCityInput, List<Airport> airportsList) {
 
-        sortAlgorithm.toSortArray(exampleArray);  // selection sort algorithm
+        sortAlgorithm.toSortLinkedList(airportsList);
 
-        System.out.println("Start BINARY SEARCH in CLASSIC ARRAY");
-        binarySearch(searchingCityInput, Arrays.asList(exampleArray));
-        System.out.println("Finish BINARY SEARCH in CLASSIC ARRAY");
+        System.out.println();
+        System.out.println("Start BINARY SEARCH in LINKEDLIST");
+        binarySearch(searchingCityInput, airportsList);
+        System.out.println("Finish BINARY SEARCH in LINKEDLIST");
+        System.out.println();
     }
 
 
-    // BenchMarking: Data:7000 ,  Algorithm process could not measure by nanoseconds.Constant.
+    // BenchMarking: Data:6050 ,  Algorithm process could not measure by nanoseconds.Constant.
+    @Override
+    public void toFindInArray(String searchingCityInput, Airport[] exampleArray) {
+
+        sortAlgorithm.toSortArray(exampleArray);
+
+        System.out.println();
+        System.out.println("Start BINARY SEARCH in CLASSIC ARRAY");
+        binarySearch(searchingCityInput, Arrays.asList(exampleArray));
+        System.out.println("Finish BINARY SEARCH in CLASSIC ARRAY");
+        System.out.println();
+    }
+
+
+    // BenchMarking: Data:6050 ,  Algorithm process could not measure by nanoseconds.Constant.
     @Override
     public void toFindInList(String searchingCityInput, List<Airport> airportsList) {
 
-        sortAlgorithm.toSortList(airportsList);// selection sort algorithm
+        sortAlgorithm.toSortList(airportsList);
 
+        System.out.println();
         System.out.println("Starting BINARY SEARCH in LIST");
         binarySearch(searchingCityInput, airportsList);
         System.out.println("Finished BINARY SEARCH in LIST");
+        System.out.println();
     }
 
     private void binarySearch(String searchingCityInput, List<Airport> airportsList) {

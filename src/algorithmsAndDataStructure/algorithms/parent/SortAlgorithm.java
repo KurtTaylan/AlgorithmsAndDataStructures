@@ -23,6 +23,10 @@ public abstract class SortAlgorithm extends Algorithm {
     public abstract void toSortList(List<Airport> list);
 
 
+    public abstract void toSortLinkedList(List<Airport> list);
+
+
+
     protected void swap(List<Airport> airportList, int indexOne, int indexTwo) {
         Airport tempMin = airportList.get(indexOne);
         Airport tempSwap = airportList.get(indexTwo);

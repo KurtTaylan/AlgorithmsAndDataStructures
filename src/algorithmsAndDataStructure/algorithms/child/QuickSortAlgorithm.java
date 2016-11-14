@@ -35,6 +35,7 @@ class QuickSortAlgorithm extends SortAlgorithm {
 
     @Override
     public void toSortArray(Airport[] airports) {
+        System.out.println();
         System.out.println("START QuickSortAlgorithm IN CLASIC ARRAY WITH BUILT-IN");
         algorithmTimer.setStartInstant(LocalTime.now());
         Comparator<Airport> byCityName = (firstElement, secondElement) ->
@@ -45,12 +46,14 @@ class QuickSortAlgorithm extends SortAlgorithm {
         algorithmTimer.setFinishInstant(LocalTime.now());
         algorithmTimer.printOutTime();
         System.out.println("FINISH QuickSortAlgorithm IN CLASIC ARRAY WITH BUILT-IN");
+        System.out.println();
     }
 
 
     //BenchMarking: Algoritm Process took: 10000000 nanoseconds. Merge Sort took 5000000 nanoseconds.
     @Override
     public void toSortList(List<Airport> list) {
+        System.out.println();
         System.out.println("START QuickSortAlgorithm IN LIST");
         algorithmTimer.setStartInstant(LocalTime.now());
 
@@ -59,6 +62,22 @@ class QuickSortAlgorithm extends SortAlgorithm {
         algorithmTimer.setFinishInstant(LocalTime.now());
         algorithmTimer.printOutTime();
         System.out.println("FINISH QuickSortAlgorithm IN LIST");
+        System.out.println();
+    }
+
+
+    @Override
+    public void toSortLinkedList(List<Airport> list) {
+        System.out.println();
+        System.out.println("START QuickSortAlgorithm IN LINKEDLIST");
+        algorithmTimer.setStartInstant(LocalTime.now());
+
+        quicksort(list, 0, list.size() - 1);
+
+        algorithmTimer.setFinishInstant(LocalTime.now());
+        algorithmTimer.printOutTime();
+        System.out.println("FINISH QuickSortAlgorithm IN LINKEDLIST");
+        System.out.println();
     }
 
     private void quicksort(List<Airport> list, int leftIndex, int rightIndex) {

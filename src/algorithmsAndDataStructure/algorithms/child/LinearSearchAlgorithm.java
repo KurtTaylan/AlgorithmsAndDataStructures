@@ -15,8 +15,30 @@ import java.util.List;
 public class LinearSearchAlgorithm extends SearchAlgorithm {
 
 
-    // BenchMarking: Result From record 6000: FOUND: "FlyPortugal", in: 3000000 nanoseconds. CLASSIC ARRAY - FOR EACH LOOP
+    // BenchMarking: Result From record 6050: FOUND: "FlyPortugal", in: Algoritm Process took: 0.002 second(s).
+    @Override
+    public void toFindInLinkedList(String searchingCityInput, List<Airport> airportsList) {
+        System.out.println();
+        System.out.println("Start LINEAR SEARCH in LINKEDLIST");
+
+        algorithmTimer.setStartInstant(LocalTime.now());
+
+        for (Airport airport : airportsList) {
+            if (airport.getCity().equalsIgnoreCase(searchingCityInput)) {
+
+                algorithmTimer.setFinishInstant(LocalTime.now());
+                algorithmTimer.printOutTime();
+                break;
+            }
+        }
+
+        System.out.println("Finish LINEAR SEARCH in LINKEDLIST");
+        System.out.println();
+    }
+
+    // BenchMarking: Result From record 6050: FOUND: "FlyPortugal", in: Algoritm Process took: 0.003 second(s).
     public void toFindInArray(String searchingCityInput, Airport[] exampleArray) {
+        System.out.println();
         System.out.println("Start LINEAR SEARCH in CLASSIC ARRAY");
 
         algorithmTimer.setStartInstant(LocalTime.now());
@@ -31,11 +53,13 @@ public class LinearSearchAlgorithm extends SearchAlgorithm {
         }
 
         System.out.println("Finish LINEAR SEARCH in CLASSIC ARRAY");
+        System.out.println();
     }
 
 
-    // BenchMarking: Result From record 6000: FOUND: "FlyPortugal", in: 1000000 nanoseconds. ARRAY LIST FOR EACH LOOP
+    // BenchMarking: Result From record 6050: FOUND: "FlyPortugal", in: Algoritm Process took: 0.003 second(s).
     public void toFindInList(String searchingCityInput, List<Airport> airportsList) {
+        System.out.println();
         System.out.println("Start LINEAR SEARCH in LIST");
 
         algorithmTimer.setStartInstant(LocalTime.now());
@@ -50,5 +74,6 @@ public class LinearSearchAlgorithm extends SearchAlgorithm {
         }
 
         System.out.println("Finished LINEAR SEARCH in LIST");
+        System.out.println();
     }
 }

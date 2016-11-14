@@ -27,6 +27,7 @@ class MysterySortAlgorithm extends SortAlgorithm {
     // BenchMarking: Data: 6050 , Algoritm Process took: 141000000 nanoseconds. // half of Selection Sort algorithm: 305000000
     @Override
     public void toSortArray(Airport[] airports) {
+        System.out.println();
         System.out.println("START mysterySorty ALGORITHM in CLASSIC ARRAY");
 
         algorithmTimer.setStartInstant(LocalTime.now());
@@ -45,13 +46,40 @@ class MysterySortAlgorithm extends SortAlgorithm {
         algorithmTimer.printOutTime();
 
         System.out.println("FINISH mysterySorty ALGORITHM in CLASSIC ARRAY");
+        System.out.println();
+    }
+
+
+    @Override
+    public void toSortLinkedList(List<Airport> airportList) {
+        System.out.println();
+        System.out.println("START mysterySorty ALGORITHM in LINKEDLIST");
+
+        algorithmTimer.setStartInstant(LocalTime.now());
+        int currentId;
+
+        for (int position = 1; position < airportList.size(); position++) {
+            currentId = position;
+
+            while (currentId > 0 && airportList.get(currentId).getCity().compareTo(airportList.get(currentId - 1).getCity()) < 0) {
+
+                swap(airportList, currentId, currentId - 1);
+                currentId = currentId - 1;
+            }
+
+        }
+        algorithmTimer.setFinishInstant(LocalTime.now());
+        algorithmTimer.printOutTime();
+
+        System.out.println("FINISH mysterySorty ALGORITHM in LINKEDLIST");
+        System.out.println();
     }
 
 
     // BenchMarking: Data: 6050 , Algoritm Process took: 115000000 nanoseconds. // half of Selection Sort algorithm: 323000000
     @Override
     public void toSortList(List<Airport> airportList) {
-
+        System.out.println();
         System.out.println("START mysterySorty ALGORITHM in LIST");
 
         algorithmTimer.setStartInstant(LocalTime.now());
@@ -71,6 +99,6 @@ class MysterySortAlgorithm extends SortAlgorithm {
         algorithmTimer.printOutTime();
 
         System.out.println("FINISH mysterySorty ALGORITHM in LIST");
-
+        System.out.println();
     }
 }

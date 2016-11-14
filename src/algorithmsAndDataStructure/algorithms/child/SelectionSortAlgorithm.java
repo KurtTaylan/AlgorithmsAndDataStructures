@@ -20,6 +20,7 @@ class SelectionSortAlgorithm extends SortAlgorithm {
     // BenchMarking: Data: 6050 , Algoritm Process took: 305000000 nanoseconds.
     @Override
     public void toSortArray(Airport[] airportList) {
+        System.out.println();
         System.out.println("START SELECTIONSORT ALGORITHM in CLASSIC ARRAY");
 
         algorithmTimer.setStartInstant(LocalTime.now());
@@ -37,12 +38,39 @@ class SelectionSortAlgorithm extends SortAlgorithm {
         algorithmTimer.printOutTime();
 
         System.out.println("FINISH SELECTIONSORT ALGORITHM in CLASSIC ARRAY");
+        System.out.println();
+    }
+
+
+    @Override
+    public void toSortLinkedList(List<Airport> airportList) {
+        System.out.println();
+        System.out.println("START SELECTIONSORT ALGORITHM in LINKEDLIST");
+
+        algorithmTimer.setStartInstant(LocalTime.now());
+        int indexMin;
+        for (int i = 0; i < airportList.size() - 1; i++) {
+
+            indexMin = i;
+
+            for (int j = i + 1; j < airportList.size(); j++)
+                if (airportList.get(j).getCity().compareTo(airportList.get(indexMin).getCity()) < 0)
+                    indexMin = j;
+
+            swap(airportList, indexMin, i);
+        }
+        algorithmTimer.setFinishInstant(LocalTime.now());
+        algorithmTimer.printOutTime();
+
+        System.out.println("FINISH SELECTIONSORT ALGORITHM in LINKEDLIST");
+        System.out.println();
     }
 
 
     // BenchMarking: Data: 6050 , Algoritm Process took: 323000000 nanoseconds.
     @Override
     public void toSortList(List<Airport> airportList) {
+        System.out.println();
         System.out.println("START SELECTIONSORT ALGORITHM IN LIST");
 
         algorithmTimer.setStartInstant(LocalTime.now());
@@ -61,5 +89,6 @@ class SelectionSortAlgorithm extends SortAlgorithm {
         algorithmTimer.printOutTime();
 
         System.out.println("FINISH SELECTIONSORT ALGORITHM IN LIST");
+        System.out.println();
     }
 }

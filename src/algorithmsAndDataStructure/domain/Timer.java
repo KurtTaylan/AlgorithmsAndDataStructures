@@ -19,7 +19,7 @@ public class Timer {
         if (processTime == 0)
             System.out.println("Algoritm Process took: NO-TIME");
         else
-            System.out.println("Algoritm Process took: " + processTime / 1000000000.0 + " second(s).");
+            System.out.println("Algoritm Process took: " + processTime / 1000000000.00 + " second(s).");
     }
 
     public LocalTime getStartInstant() {

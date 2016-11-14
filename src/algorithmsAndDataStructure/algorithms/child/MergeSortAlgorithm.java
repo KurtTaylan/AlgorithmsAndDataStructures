@@ -25,11 +25,11 @@ import java.util.List;
 class MergeSortAlgorithm extends SortAlgorithm {
 
 
-    // BenchMarking: Data: 6050 , Algoritm Process took: 8000000 nanoseconds.- FUCKING FAST than insertion (Mystry) sort even.
+    // BenchMarking: Data: 6050 , Algoritm Process took: 0.014 second(s). - FUCKING FAST than insertion (Mystry) sort even.
     @Override
     public void toSortArray(Airport[] airports) {
-        System.out.println("START MergeSortAlgorithm in CLASSIC ARRAY");
 
+        System.out.println("START MergeSortAlgorithm in CLASSIC ARRAY");
         algorithmTimer.setStartInstant(LocalTime.now());
 
              /* Built-in optimized merge-sort */
@@ -41,15 +41,15 @@ class MergeSortAlgorithm extends SortAlgorithm {
         algorithmTimer.printOutTime();
 
         System.out.println("FINISH MergeSortAlgorithm in CLASSIC ARRAY");
+        System.out.println();
     }
 
 
-    // BenchMarking: Data: 6050 , Algoritm Process took: 5000000 nanoseconds...
+    // BenchMarking: Data: 6050 , Algoritm Process took: 0.009 second(s).
     @Override
     public void toSortList(List<Airport> airportList) {
-
+        System.out.println();
         System.out.println("START MergeSortAlgorithmin LIST");
-
         algorithmTimer.setStartInstant(LocalTime.now());
 
         //    Built-in optimized merge-sort
@@ -61,6 +61,26 @@ class MergeSortAlgorithm extends SortAlgorithm {
         algorithmTimer.printOutTime();
 
         System.out.println("FINISH MergeSortAlgorithm in LIST");
+        System.out.println();
+    }
 
+
+    //BenchMarking: Data: 6050 , Algoritm Process took: 0.006 second(s).
+    @Override
+    public void toSortLinkedList(List<Airport> airportList) {
+        System.out.println();
+        System.out.println("START MergeSortAlgorithm in LINKEDLIST");
+        algorithmTimer.setStartInstant(LocalTime.now());
+
+             /* Built-in optimized merge-sort */
+        Comparator<Airport> byCityName = (firstElement, secondElement) ->
+                firstElement.getCity().compareTo(secondElement.getCity());
+        Collections.sort(airportList, byCityName);
+
+        algorithmTimer.setFinishInstant(LocalTime.now());
+        algorithmTimer.printOutTime();
+
+        System.out.println("FINISH MergeSortAlgorithm in LINKEDLIST");
+        System.out.println();
     }
 }

@@ -8,6 +8,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -28,6 +29,9 @@ public abstract class SearchAlgorithm extends Algorithm {
     public abstract void toFindInList(String searchingCityInput, List<Airport> airportsList);
 
 
+    public abstract void toFindInLinkedList(String searchingCityInput, List<Airport> airportsList);
+
+
     public void doAlgorihtm() {
         System.out.println("Started with preparation");
 
@@ -36,6 +40,7 @@ public abstract class SearchAlgorithm extends Algorithm {
 
         List<Airport> airportsList = new ArrayList<>();
         fillInAirportList(airPortPath, airportsList);
+        List<Airport> linkedList = new LinkedList<>(airportsList);
         Airport[] exampleArray = new Airport[airportsList.size()];
 
         if (!airportsList.isEmpty()) {
@@ -47,6 +52,7 @@ public abstract class SearchAlgorithm extends Algorithm {
             String searchingCityInput = "\"FlyPortugal\"";
             toFindInArray(searchingCityInput, exampleArray);
             toFindInList(searchingCityInput, airportsList);
+            toFindInLinkedList(searchingCityInput, linkedList);
         }
     }
 
