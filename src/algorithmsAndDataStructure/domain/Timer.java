@@ -16,7 +16,10 @@ public class Timer {
 
     public void printOutTime() {
         long processTime = this.finishInstant.toNanoOfDay() - this.startInstant.toNanoOfDay();
-        System.out.println("Algoritm Process took: " + processTime + " nanoseconds.");
+        if (processTime == 0)
+            System.out.println("Algoritm Process took: NO-TIME");
+        else
+            System.out.println("Algoritm Process took: " + processTime / 1000000000.0 + " second(s).");
     }
 
     public LocalTime getStartInstant() {

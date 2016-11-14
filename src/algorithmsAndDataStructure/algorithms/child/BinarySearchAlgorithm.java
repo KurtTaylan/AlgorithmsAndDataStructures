@@ -26,10 +26,11 @@ import java.util.List;
 public class BinarySearchAlgorithm extends SearchAlgorithm {
 
 
-    private SortAlgorithm sortAlgorithm = new MergeSortAlgorithm();// 2- MysterySortAlgorithm(); // 3-SelectionSortAlgorithm();
+    // 2-
+    private SortAlgorithm sortAlgorithm = new QuickSortAlgorithm();//1-MergeSortAlgorithm();// 3- MysterySortAlgorithm(); // 4-SelectionSortAlgorithm();
 
 
-    // Data:7000 ,  Algorithm process could not measure by nanoseconds.Constant.
+    // BenchMarking: Data:7000 ,  Algorithm process could not measure by nanoseconds.Constant.
     @Override
     public void toFindInArray(String searchingCityInput, Airport[] exampleArray) {
 
@@ -41,7 +42,7 @@ public class BinarySearchAlgorithm extends SearchAlgorithm {
     }
 
 
-    // Data:7000 ,  Algorithm process could not measure by nanoseconds.Constant.
+    // BenchMarking: Data:7000 ,  Algorithm process could not measure by nanoseconds.Constant.
     @Override
     public void toFindInList(String searchingCityInput, List<Airport> airportsList) {
 
@@ -72,7 +73,5 @@ public class BinarySearchAlgorithm extends SearchAlgorithm {
                 minIndex = middleIndex + 1;
             }
         }
-
-        System.out.println("Finished BINARY SEARCH in LIST");
     }
 }

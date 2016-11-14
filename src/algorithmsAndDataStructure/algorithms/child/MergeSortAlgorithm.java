@@ -12,19 +12,27 @@ import java.util.List;
 /**
  * We are going to use Built-in method which implemented merge-sort:
  * <p>
- * Strategy of Merge sort is: Divide - Conquer. 1- Divide whole list smaller list
- * 2- Sort and merge them at the end.
+ * Strategy of Merge sort is: Divide - Conquer.
+ *
+ * 1- Divide whole list half
+ * 2- Sort first half  -Recursion
+ * 3- Sort second half  -Recursion
+ * 4- Merge sorted lists
+ *
+ * Best Case: list has one element =  O(1)
+ * Worst Case: O()
  */
 class MergeSortAlgorithm extends SortAlgorithm {
 
 
-    // Data: 6050 , Algoritm Process took: 8000000 nanoseconds.- FUCKING FAST than insertion (Mystry) sort even.
+    // BenchMarking: Data: 6050 , Algoritm Process took: 8000000 nanoseconds.- FUCKING FAST than insertion (Mystry) sort even.
     @Override
     public void toSortArray(Airport[] airports) {
         System.out.println("START MergeSortAlgorithm in CLASSIC ARRAY");
 
         algorithmTimer.setStartInstant(LocalTime.now());
 
+             /* Built-in optimized merge-sort */
         Comparator<Airport> byCityName = (firstElement, secondElement) ->
                 firstElement.getCity().compareTo(secondElement.getCity());
         Collections.sort(Arrays.asList(airports), byCityName);
@@ -36,7 +44,7 @@ class MergeSortAlgorithm extends SortAlgorithm {
     }
 
 
-    // Data: 6050 , Algoritm Process took: 5000000 nanoseconds...
+    // BenchMarking: Data: 6050 , Algoritm Process took: 5000000 nanoseconds...
     @Override
     public void toSortList(List<Airport> airportList) {
 
@@ -44,6 +52,7 @@ class MergeSortAlgorithm extends SortAlgorithm {
 
         algorithmTimer.setStartInstant(LocalTime.now());
 
+        //    Built-in optimized merge-sort
         Comparator<Airport> byCityName = (firstElement, secondElement) ->
                 firstElement.getCity().compareTo(secondElement.getCity());
         Collections.sort(airportList, byCityName);

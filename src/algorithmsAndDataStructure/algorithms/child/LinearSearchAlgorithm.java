@@ -15,7 +15,7 @@ import java.util.List;
 public class LinearSearchAlgorithm extends SearchAlgorithm {
 
 
-    // Result From record 6000: FOUND: "FlyPortugal", in: 3000000 nanoseconds. CLASSIC ARRAY - FOR EACH LOOP
+    // BenchMarking: Result From record 6000: FOUND: "FlyPortugal", in: 3000000 nanoseconds. CLASSIC ARRAY - FOR EACH LOOP
     public void toFindInArray(String searchingCityInput, Airport[] exampleArray) {
         System.out.println("Start LINEAR SEARCH in CLASSIC ARRAY");
 
@@ -34,7 +34,7 @@ public class LinearSearchAlgorithm extends SearchAlgorithm {
     }
 
 
-    // Result From record 6000: FOUND: "FlyPortugal", in: 1000000 nanoseconds. ARRAY LIST FOR EACH LOOP
+    // BenchMarking: Result From record 6000: FOUND: "FlyPortugal", in: 1000000 nanoseconds. ARRAY LIST FOR EACH LOOP
     public void toFindInList(String searchingCityInput, List<Airport> airportsList) {
         System.out.println("Start LINEAR SEARCH in LIST");
 

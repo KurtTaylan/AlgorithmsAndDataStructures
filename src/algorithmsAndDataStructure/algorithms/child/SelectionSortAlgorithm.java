@@ -17,7 +17,7 @@ import java.util.List;
 class SelectionSortAlgorithm extends SortAlgorithm {
 
 
-    // Data: 6050 , Algoritm Process took: 305000000 nanoseconds.
+    // BenchMarking: Data: 6050 , Algoritm Process took: 305000000 nanoseconds.
     @Override
     public void toSortArray(Airport[] airportList) {
         System.out.println("START SELECTIONSORT ALGORITHM in CLASSIC ARRAY");
@@ -40,7 +40,7 @@ class SelectionSortAlgorithm extends SortAlgorithm {
     }
 
 
-    // Data: 6050 , Algoritm Process took: 323000000 nanoseconds.
+    // BenchMarking: Data: 6050 , Algoritm Process took: 323000000 nanoseconds.
     @Override
     public void toSortList(List<Airport> airportList) {
         System.out.println("START SELECTIONSORT ALGORITHM IN LIST");

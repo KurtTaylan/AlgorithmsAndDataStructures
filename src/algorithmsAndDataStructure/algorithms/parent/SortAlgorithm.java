@@ -9,7 +9,8 @@ import java.util.List;
  *
  * Fast order:
  *
- * 1-Merge Sort Algorithm - Built-in with java.util.Collections
+ * 1-Merge Sort Algorithm - Built-in with java.util.Collections.sort
+ * 2-Quick Sort Algorithm - Built-in with java.util.Arrays.sort
  * 2-Insertion Algorithm
  * 3-Selection Algorithm
  */
@@ -22,11 +23,11 @@ public abstract class SortAlgorithm extends Algorithm {
     public abstract void toSortList(List<Airport> list);
 
 
-    protected void swap(List<Airport> airportList, int indexMin, int i) {
-        Airport tempMin = airportList.get(indexMin);
-        Airport tempSwap = airportList.get(i);
-        airportList.set(indexMin, tempSwap);
-        airportList.set(i, tempMin);
+    protected void swap(List<Airport> airportList, int indexOne, int indexTwo) {
+        Airport tempMin = airportList.get(indexOne);
+        Airport tempSwap = airportList.get(indexTwo);
+        airportList.set(indexOne, tempSwap);
+        airportList.set(indexTwo, tempMin);
     }
 
 }

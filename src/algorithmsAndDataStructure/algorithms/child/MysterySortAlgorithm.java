@@ -24,7 +24,7 @@ import java.util.List;
 class MysterySortAlgorithm extends SortAlgorithm {
 
 
-    // Data: 6050 , Algoritm Process took: 141000000 nanoseconds. // half of Selection Sort algorithm: 305000000
+    // BenchMarking: Data: 6050 , Algoritm Process took: 141000000 nanoseconds. // half of Selection Sort algorithm: 305000000
     @Override
     public void toSortArray(Airport[] airports) {
         System.out.println("START mysterySorty ALGORITHM in CLASSIC ARRAY");
@@ -48,7 +48,7 @@ class MysterySortAlgorithm extends SortAlgorithm {
     }
 
 
-    // Data: 6050 , Algoritm Process took: 115000000 nanoseconds. // half of Selection Sort algorithm: 323000000
+    // BenchMarking: Data: 6050 , Algoritm Process took: 115000000 nanoseconds. // half of Selection Sort algorithm: 323000000
     @Override
     public void toSortList(List<Airport> airportList) {
 
