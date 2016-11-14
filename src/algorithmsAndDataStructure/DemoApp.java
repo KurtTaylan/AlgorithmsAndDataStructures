@@ -11,9 +11,11 @@ public class DemoApp {
 
     public static void main(String[] args) {
 
+        String searchingCityInput = "\"FlyPortugal\"";
+
         // Print out algorithm under linear search process
         SearchAlgorithm linearSearch = new LinearSearchAlgorithm();
-        linearSearch.doAlgorihtm();
+        linearSearch.searchFor(searchingCityInput);
 
         System.out.println();
         System.out.println();
@@ -21,7 +23,7 @@ public class DemoApp {
 
         // Print out algorithm under binary search process with different kind of sort algorithms
         SearchAlgorithm binarySearch = new BinarySearchAlgorithm();
-        binarySearch.doAlgorihtm();
+        binarySearch.searchFor(searchingCityInput);
 
     }
 }

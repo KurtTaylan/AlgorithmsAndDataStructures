@@ -1,5 +1,6 @@
 package algorithmsAndDataStructure.algorithms.parent;
 
+import algorithmsAndDataStructure.algorithms.commonBehavior.Sortable;
 import algorithmsAndDataStructure.domain.Airport;
 
 import java.util.List;
@@ -14,17 +15,7 @@ import java.util.List;
  * 2-Insertion Algorithm
  * 3-Selection Algorithm
  */
-public abstract class SortAlgorithm extends Algorithm {
-
-
-    public abstract void toSortArray(Airport[] array);
-
-
-    public abstract void toSortList(List<Airport> list);
-
-
-    public abstract void toSortLinkedList(List<Airport> list);
-
+public abstract class SortAlgorithm extends Algorithm implements Sortable {
 
 
     protected void swap(List<Airport> airportList, int indexOne, int indexTwo) {

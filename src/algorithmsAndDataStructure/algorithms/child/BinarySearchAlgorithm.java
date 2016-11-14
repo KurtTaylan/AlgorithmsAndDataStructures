@@ -5,6 +5,7 @@ import algorithmsAndDataStructure.algorithms.parent.SortAlgorithm;
 import algorithmsAndDataStructure.domain.Airport;
 
 import java.time.LocalTime;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -25,19 +26,41 @@ import java.util.List;
  */
 public class BinarySearchAlgorithm extends SearchAlgorithm {
 
-    // 2-
-    private SortAlgorithm sortAlgorithm = new MergeSortAlgorithm();//1-MergeSortAlgorithm();// 3- MysterySortAlgorithm(); // 4-SelectionSortAlgorithm();
+
+    private SortAlgorithm sortAlgorithm;
+
+
+    public BinarySearchAlgorithm() {
+        this(new MergeSortAlgorithm());
+    }
+
+    public BinarySearchAlgorithm(SortAlgorithm sortAlgorithm) {
+        this.sortAlgorithm = sortAlgorithm;
+    }
+
+
+    @Override
+    public void searchFor(String word) {
+        List<Airport> sampleList = new ArrayList<>();
+        util.prepareSampleList(sampleList);
+
+        // Comparativism
+        toFindInLinkedList(word, sampleList);
+        toFindInArray(word, (Airport[]) sampleList.toArray());
+        toFindInLinkedList(word, sampleList);
+    }
 
 
     // BenchMarking: Data:6050 ,  Algoritm Process took: 0.001 second(s).
     @Override
     public void toFindInLinkedList(String searchingCityInput, List<Airport> airportsList) {
-
         sortAlgorithm.toSortLinkedList(airportsList);
 
         System.out.println();
         System.out.println("Start BINARY SEARCH in LINKEDLIST");
+
         binarySearch(searchingCityInput, airportsList);
+
         System.out.println("Finish BINARY SEARCH in LINKEDLIST");
         System.out.println();
     }
@@ -46,12 +69,13 @@ public class BinarySearchAlgorithm extends SearchAlgorithm {
     // BenchMarking: Data:6050 ,  Algorithm process could not measure by nanoseconds.Constant.
     @Override
     public void toFindInArray(String searchingCityInput, Airport[] exampleArray) {
-
         sortAlgorithm.toSortArray(exampleArray);
 
         System.out.println();
         System.out.println("Start BINARY SEARCH in CLASSIC ARRAY");
+
         binarySearch(searchingCityInput, Arrays.asList(exampleArray));
+
         System.out.println("Finish BINARY SEARCH in CLASSIC ARRAY");
         System.out.println();
     }
@@ -65,7 +89,9 @@ public class BinarySearchAlgorithm extends SearchAlgorithm {
 
         System.out.println();
         System.out.println("Starting BINARY SEARCH in LIST");
+
         binarySearch(searchingCityInput, airportsList);
+
         System.out.println("Finished BINARY SEARCH in LIST");
         System.out.println();
     }

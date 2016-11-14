@@ -4,6 +4,7 @@ import algorithmsAndDataStructure.algorithms.parent.SearchAlgorithm;
 import algorithmsAndDataStructure.domain.Airport;
 
 import java.time.LocalTime;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -11,12 +12,27 @@ import java.util.List;
  * <p>
  * LinearSearch is just Brute-Force algorithm type that you are starting from index 0 at collection
  * than you try over each element in pool of data.
+ *
+ * They don't need to be sorted.
  */
 public class LinearSearchAlgorithm extends SearchAlgorithm {
 
 
-    // BenchMarking: Result From record 6050: FOUND: "FlyPortugal", in: Algoritm Process took: 0.002 second(s).
+
     @Override
+    public void searchFor(String word) {
+
+        List<Airport> sampleList = new ArrayList<>();
+        util.prepareSampleList(sampleList);
+
+        // Comparativism in classic data-structures.
+        toFindInLinkedList(word, sampleList);
+        toFindInArray(word, (Airport[]) sampleList.toArray());
+        toFindInLinkedList(word, sampleList);
+    }
+
+
+    // BenchMarking: Result From record 6050: FOUND: "FlyPortugal", in: Algoritm Process took: 0.002 second(s).
     public void toFindInLinkedList(String searchingCityInput, List<Airport> airportsList) {
         System.out.println();
         System.out.println("Start LINEAR SEARCH in LINKEDLIST");
@@ -35,6 +51,7 @@ public class LinearSearchAlgorithm extends SearchAlgorithm {
         System.out.println("Finish LINEAR SEARCH in LINKEDLIST");
         System.out.println();
     }
+
 
     // BenchMarking: Result From record 6050: FOUND: "FlyPortugal", in: Algoritm Process took: 0.003 second(s).
     public void toFindInArray(String searchingCityInput, Airport[] exampleArray) {
