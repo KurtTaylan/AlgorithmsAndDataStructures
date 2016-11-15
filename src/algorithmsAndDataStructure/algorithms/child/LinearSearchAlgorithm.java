@@ -23,7 +23,7 @@ public class LinearSearchAlgorithm extends SearchAlgorithm {
     public void searchFor(String word) {
 
         List<Airport> sampleList = new ArrayList<>();
-        util.prepareSampleList(sampleList);
+        util.prepareAirportList(sampleList);
 
         // Comparativism in classic data-structures.
         toFindInLinkedList(word, sampleList);

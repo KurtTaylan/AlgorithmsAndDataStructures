@@ -15,15 +15,45 @@ import java.util.List;
 public class AlgorithmUtil {
 
 
-    public void prepareSampleList(List<? super Airport> airportsList) throws IllegalArgumentException {
+    public void prepareAirportRoutesList(List<? super Airport> airportsList) throws IllegalArgumentException {
 
         System.out.println("Started with preparation");
 
-        File airPortFile = new File("/home/taylan/Desktop/AlgorithmsAndDataStructure/src/algorithmsAndDataStructure/resource/airlines.dat.txt");
+        String projectDir = getProjectDir();
+        assert projectDir != null : "File cannot be loaded because property could not fetched";
+
+        File airPortFile = new File(projectDir + "/algorithmsAndDataStructure/resource/routes.txt");
+        Path airPortPath = airPortFile.toPath();
+
+        assert airportsList.isEmpty() : "File is empty"; // enable assertion with "-ea" vm argument.
+    }
+
+
+    public void prepareAirportList(List<? super Airport> airportsList) throws IllegalArgumentException {
+
+        // Workaround for Native java project sample
+        String projectDir = getProjectDir();
+        assert projectDir != null : "File cannot be loaded because property could not fetched";
+
+        File airPortFile = new File(projectDir + "/algorithmsAndDataStructure/resource/airlines.txt");
         Path airPortPath = airPortFile.toPath();
         fillInAirportList(airPortPath, airportsList);
 
         assert airportsList.isEmpty() : "File is empty"; // enable assertion with "-ea" vm argument.
+    }
+
+    private String getProjectDir() {
+        String projectDir = null;
+        String[] properties = System.getProperty("java.class.path").split(":+");
+
+        for (int i = 0; i < properties.length; i++) {
+            String currentProp = properties[i];
+            if (currentProp.contains("AlgorihtmsAndDataStructure")) {
+                projectDir = currentProp;
+                break;
+            }
+        }
+        return projectDir;
     }
 
     private void fillInAirportList(Path airPortPath, List<? super Airport> airportsList) {
@@ -40,7 +70,6 @@ public class AlgorithmUtil {
              *  6.- City
              *  7.- Country
              * */
-
                 String lineList[] = line.split(",");
                 Airport airportRecord = new Airport(lineList[4], lineList[5], lineList[6]);
                 airportsList.add(airportRecord);

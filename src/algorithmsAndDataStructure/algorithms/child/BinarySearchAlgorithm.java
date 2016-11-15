@@ -42,7 +42,7 @@ public class BinarySearchAlgorithm extends SearchAlgorithm {
     @Override
     public void searchFor(String word) {
         List<Airport> sampleList = new ArrayList<>();
-        util.prepareSampleList(sampleList);
+        util.prepareAirportList(sampleList);
 
         // Comparativism
         toFindInLinkedList(word, sampleList);

@@ -18,6 +18,8 @@ import java.util.TreeSet;
  * Social-network           Heap                 Level-order (Breath-first)
  * Dictionary              Tries                 Level-order (Breath-first)
  * Classic Search        Balanced-BST            Pre-order   (Depth-first)
+ *
+ * TODO(@author:Taylan): Create Low-level Tree and TreeNode object to show Traverse algorithms
  */
 public class TreeSearchAlgorithm extends TraverseAlgorithm implements Traversable {
 
@@ -25,7 +27,7 @@ public class TreeSearchAlgorithm extends TraverseAlgorithm implements Traversabl
     @Override
     protected void traverseFor(String word) {
         List<Airport> sampleList = new ArrayList<>();
-        util.prepareSampleList(sampleList);
+        util.prepareAirportList(sampleList);
         TreeSet<Airport> tree = new TreeSet<>();
     }
 
